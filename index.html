@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hapi Bday, Abi!</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #ffe6f2;
+    text-align: center;
+    padding: 50px;
+    overflow-x: hidden;
+}
+.page { display: none; }
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: #ff66a3;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+button:hover { background: #ff3385; }
+/* Button area */
+#buttonArea {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin-top: 20px;
+}
+/* Gift image centered and cropped */
+#giftImg {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* crops image to fit box */
+    border-radius: 10px;
+    margin: 20px auto;
+}
+/* Yes button fixed */
+#yesBtn {
+    position: absolute;
+    left: 30%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+/* No button starts centered-right */
+#noBtn {
+    position: absolute;
+    left: 70%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div id="home" class="page" style="display:block;">
+    <h1>May surprise ka sa'kin!</h1>
+    <div style="width:200px;height:200px;margin:20px auto;background:#fff; border:2px solid #ff66a3;border-radius:10px;display:flex; align-items:center;justify-content:center;overflow:hidden;">
+        <img src="hehe.gif" alt="Birthday Image" style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+    </div>
+    <button onclick="showPage('confirm')" style="margin-top:20px;">Just click here!</button>
+</div>
+
+<!-- CONFIRM PAGE -->
+<div id="confirm" class="page">
+    <h2>Sure ka gusto mo(ko)??</h2>
+    <!-- Centered Gift Image (cropped) -->
+    <img id="giftImg" src="gift.gif" alt="Gift Image">
+    <div id="buttonArea">
+        <button id="yesBtn" onclick="showPage('letter')">Yes na yes!</button>
+        <button id="noBtn" onclick="moveButton(); changeGiftImage();">Ayaw!</button>
+    </div>
+</div>
+
+<!-- LETTER PAGE -->
+<div id="letter" class="page" style="max-width:400px;margin:auto;text-align:center;overflow-y:auto;">
+    <h1>Happy Birthday, Abi!</h1>
+    <div style="width:200px;height:200px;margin:20px auto;background:#fff; border:2px solid #ff66a3;border-radius:10px;display:flex; align-items:center;justify-content:center;overflow:hidden;">
+        <img src="bday.gif" alt="Birthday Image" style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+    </div>
+   <p>
+Happy Birthday Abi!<br>
+I really hope that you'll have a purr-fect birthday, wishing you luck and have all your wishes come true!
+</p>
+<p>
+simpleng letters para sa'yo syempre hehe
+</p>
+<p>
+12-15-24<br>
+This is the first letter I will write for you.<br>
+I hope after you received all of these letters, you’ll be less feel love or even much more feel love.
+</p>
+<p>
+Iniisip ko kung babatiin mo ako sa birthday pero feeling ko hindi mo pa ata alam. Kaya if ever man na hindi, I’ll understand naman kaya okay lang. Pero sana bago magpasko, mas maging better yung mental health mo at mas maging okay ka na, para mas malessen yung pag-breakdown mo.
+</p>
+<p>
+I will wish you good luck, and Merry Christmas and a Happy New Year!
+</p>
+
+<p>
+01-15-25<br>
+Hello again!<br>
+SKL, nilagay ko na sa calendar ko na every 15th of the month magsusulat ako, kaya here I am, may letter na naman.
+</p>
+<p>
+Anyway, nakakalungkot lang na wala ka na sa school dahil OJT niyo pa rin, pero okay lang naman nakikita pa rin kita sa 1st floor ng HB at sa mga stories, kaya all goods lang.
+</p>
+<p>
+Alam kong late mo na ‘to mababasa o baka hindi pa nga, pero gusto ko pa rin sabihin: good luck sa OJT mo, and ingat ka palagi!
+</p>
+
+<p>
+02-15-25<br>
+February na pala.<br>
+Naalala ko yung digital na flowers na sinend ko sayo, kaya lang hindi ko naibigay sayo yung totoong flower kahapon kasi wala ka haha.
+</p>
+<p>
+Simula pa nung last month, nagtry akong magtanim ng roses, at ayun, naging goods naman buhay na buhay pero wala pang flowers. Kaya kung sakaling may makita ka sa stories ko noon, para sayo yun, kaso nahihiya lang talaga akong ibigay sayo.
+</p>
+<p>
+Masaya na rin ako kahit hindi kita mahagilap sa school.
+</p>
+
+<p>
+03-15-25<br>
+Palapit na nang palapit graduation niyo, kaya sana all haha.<br>
+Hindi ko alam kung tapos na defense niyo kaya wala akong masabi. Ba’t kaya ganun, alam kong kaya naman kitang kausapin pero nahihiya ako kapag andiyan ka na.
+</p>
+<p>
+Well, masaya na akong makita ka, pero siguro mas masaya kung kausap ka. Pero hayaan mo na, siguro ganun talaga nakakalungkot pero nakakatawa rin.
+</p>
+<p>
+Kaya ikaw, kahit hirap na hirap ka na, wag kang susuko ha. Everything happens for a reason. Malay mo, mahirap lang ngayon kasi mas maganda yung ibibigay niyan sa’yo sa huli.
+</p>
+<p>
+Good luck, and ingat everyday!
+</p>
+
+<p>
+04-15-25<br>
+Ang bilis ng panahon, April na.<br>
+Magdedefense na rin pala kami next month. Ikaw kaya, kailan defense niyo?
+</p>
+<p>
+By the way, salamat na rin pala isa ka sa mga dahilan kung bakit ako lumipat. Maliban sa gusto kita, ikaw din pala yung nagsabi sa’kin kung bakit mas okay sa ULS in terms of academics. Kaya thank you talaga!
+</p>
+<p>
+Anyway, kung hindi pa tapos defense niyo, good luck and galingan mo!<br>
+At kung tapos na, belated congratulations!
+</p>
+
+<p>
+05-15-25<br>
+OMG! Dalawang araw na lang, defense na namin.<br>
+Baka naman kahit good luck lang, hehe.
+</p>
+<p>
+Oo nga pala, kumusta naman pala defense niyo? Goods ba o nahirapan kayo?<br>
+Alam mo ba? Syempre hindi, pero kung sakaling makita kita sa 17, sasabihin ko sana sayo na baka gusto mo akong sabihan ng good luck, haha. Pero mukhang malabo, kaya imagination na lang muna para at least medyo dama pa rin.
+</p>
+<p>
+Malapit na rin pala talaga graduation practice niyo. Sayang, hindi ako makakanood kahit saglit lang, kaya sa mismong graduation na lang.<br>
+Kitakits talaga.
+</p>
+
+<p>
+06-15-25<br>
+Hello again, Abi!<br>
+Alam mo ba, kinilig ako dun sa sinabi mo. E nasa ilog kami noon kaya sabi nila mukha raw akong kinikilig, hehe.
+</p>
+<p>
+Tapos ngayong month din pala defense niyo tagal ko pa iniisip, ngayong buwan lang pala. Pero buti naitawid niyo, kaya congrats talaga!
+</p>
+<p>
+Btw, alam mo ba, hindi ako naiinis o naasar kapag late ka mag-reply. Alam kong busy kang tao at may mga problema ka rin. Kaya kung iniisip mo na nakakasama yun sa pagkatao mo, hindi ah.
+</p>
+<p>
+Anyway, congrats sa graduation niyo!<br>
+Ang ganda-ganda mo sa toga mo, as in super talaga.<br>
+Alam mo ba, gusto kong magpapic sana sayo noon kung hindi lang ako tinawag kasi aalis na raw kami, kaya sayang talaga.
+</p>
+<p>
+Kaya congratulations ulit, at good luck sa board exam mo!
+</p>
+
+<p>
+07-15-25<br>
+Kumusta ka na?<br>
+It’s been a long time. If ever gusto mo akong makita, magchat ka lang haha, jwk.
+</p>
+<p>
+Pero kumusta ka nga? Okay ka lang ba? Kinakabahan ka ba, napepressure, o nalulungkot?<br>
+Kung isa sa mga yan ang nararamdaman mo this time, I hope malagpasan mo agad yun at sana hindi ka panghinaan ng loob, lalo na at malapit na exam mo.
+</p>
+<p>
+Good luck at sana makapasa ka  1 take lang yan sayo!<br>
+Ganbare!
+</p>
+
+<p>
+08-15-25<br>
+Congratulations, Abi!<br>
+Or should I say, Abigail D. Cabauatan, RSW. Wow na wow talaga ako kaya super idol na talaga kita.
+</p>
+<p>
+May Will of D ka pa pala, haha. Anyways, super happy ako for you and your family.<br>
+Sabi na e, 1 take lang talaga yan, syempre ikaw na yan e, wala ng iba pa.
+</p>
+<p>
+Congratulations and good luck on your journey, Abi!
+</p>
+
+<p>
+09-15-25<br>
+Long time no see (literal na no see talaga)!<br>
+Kailan kaya kita makikita ulit? Like, makakasalubong ba kita sa daan o mababangga mo ako? Kasi paano ba naman yan, ilang buwan na kitang hindi nakikita, wala nang pampasigla sa pagpasok ko.
+</p>
+<p>
+Hindi ko na rin alam kung formal ba dapat tong mga letters na 'to o casual lang. Pero gusto ko lang sabihin kung anong mga masayang nangyayari sa buhay ko na dapat mong malaman, kaya goods na yun sa'kin, sana sayo rin.
+</p>
+<p>
+Sana talaga makita kita kahit madapa ka lang sa harap ko, para naman medyo enjoy ang school days haha, jwk!<br>
+Anyways, byebyee!
+</p>
+
+<p>
+10-15-25<br>
+Ang bilis talaga ng panahon, akalain mo yun, isang buwan na lang kaarawan mo.<br>
+Parang kahapon lang graduation niyo, tapos board passer, at ngayon magbibirthday ka na.
+</p>
+<p>
+Pasensya na at wala akong gift sa'yo sa birthday mo. Nalanta na kasi yung rose ko, pero try ko kapag merong namulaklak, babantayan ko yun for sure.
+</p>
+<p>
+Kaya sana naman masaya ka ngayong buwan. Mukha kasing malungkot ka at napakalowkey mo na sa social, kaya I hope okay ka lang at hindi ka na ganun kalungkot.
+</p>
+<p>
+Good luck ulit, and mwa!
+</p>
+
+<p>
+11-11-25<br>
+Hello Abi,<br>
+Inagaahan ko na gumawa ng letter at baka hindi umabot tong battery ko sa birthday mo, pero feeling ko may kuryente na non.<br>
+Kumusta na rin pala si Ermat mo? Sana okay na siya.<br>
+Anyways, 11:11 PM din ako nagsimula magsulat para dama mo yung swerte at para special na rin, hehe.<br>
+Kaya advanced happy birthday and wish you luck!
+</p>
+<p>
+And that's it!<br>
+I hope to see you soon(sana talaga)!
+</p>
+
+</div>
+
+<script>
+function showPage(page) {
+    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+    document.getElementById(page).style.display = 'block';
+}
+
+// Move only the No button
+function moveButton() {
+    const noBtn = document.getElementById('noBtn');
+    const area = document.getElementById('buttonArea');
+    const maxX = area.offsetWidth - noBtn.offsetWidth;
+    const maxY = area.offsetHeight - noBtn.offsetHeight;
+    const randX = Math.random() * maxX;
+    const randY = Math.random() * maxY;
+    noBtn.style.left = randX + "px";
+    noBtn.style.top = randY + "px";
+}
+
+// Always change to a single local image
+function changeGiftImage() {
+    const img = document.getElementById('giftImg');
+    img.src = "crying.gif"; // always use this image
+}
+</script>
+
+</body>
+</html>
