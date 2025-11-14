@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abi—Birthday!</title>
+<title>Abi—birthday!</title>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -25,30 +25,26 @@ button {
     z-index: 10;
 }
 button:hover { background: #ff3385; }
-/* Button area */
 #buttonArea {
     position: relative;
     height: 250px;
     width: 100%;
     margin-top: 20px;
 }
-/* Gift image centered and cropped */
 #giftImg {
     display: block;
     width: 150px;
     height: 150px;
-    object-fit: cover; /* crops image to fit box */
+    object-fit: cover;
     border-radius: 10px;
     margin: 20px auto;
 }
-/* Yes button fixed */
 #yesBtn {
     position: absolute;
     left: 30%;
     top: 70%;
     transform: translate(-50%, -50%);
 }
-/* No button starts centered-right */
 #noBtn {
     position: absolute;
     left: 70%;
@@ -71,7 +67,6 @@ button:hover { background: #ff3385; }
 <!-- CONFIRM PAGE -->
 <div id="confirm" class="page">
     <h2>Sure ka gusto mo(ko)??</h2>
-    <!-- Centered Gift Image (cropped) -->
     <img id="giftImg" src="gift.gif" alt="Gift Image">
     <div id="buttonArea">
         <button id="yesBtn" onclick="showPage('letter')">Yes na yes!</button>
@@ -266,7 +261,6 @@ function showPage(page) {
     document.getElementById(page).style.display = 'block';
 }
 
-// Move only the No button
 function moveButton() {
     const noBtn = document.getElementById('noBtn');
     const area = document.getElementById('buttonArea');
@@ -278,13 +272,11 @@ function moveButton() {
     noBtn.style.top = randY + "px";
 }
 
-// Always change to a single local image
 function changeGiftImage() {
     const img = document.getElementById('giftImg');
-    img.src = "crying.gif"; // always use this image
+    img.src = "crying.gif";
 }
 </script>
 
 </body>
 </html>
-
