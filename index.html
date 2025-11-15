@@ -77,10 +77,12 @@ button:hover { background: #ff3385; }
 <!-- LETTER PAGE -->
 <div id="letter" class="page" style="max-width:400px;margin:auto;text-align:center;overflow-y:auto;">
     <h1>Happy Birthday, Abi!</h1>
+
     <div style="width:200px;height:200px;margin:20px auto;background:#fff; border:2px solid #ff66a3;border-radius:10px;display:flex; align-items:center;justify-content:center;overflow:hidden;">
         <img src="bday.gif" alt="Birthday Image" style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
     </div>
-   <p>
+
+     <p>
 Happy Birthday Abi!<br>
 I really hope that you'll have a purr-fect birthday, wishing you luck and have all your wishes come true!
 </p>
@@ -253,7 +255,9 @@ And that's it!<br>
 I hope to see you soon(sana talaga)!
 </p>
 <p>anyways gusto mo pala ako ha! hehe</p>
-
+    <button onclick="goToForm()" style="padding:10px 20px;">
+        Kung oo talaga
+    </button>
 </div>
 
 <script>
@@ -277,12 +281,11 @@ function changeGiftImage() {
     const img = document.getElementById('giftImg');
     img.src = "crying.gif";
 }
+
+function goToForm() {
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdbMIBwfHnugrJ-49DuyMDp8g08m_sOvX3nqQds-kHK8WmsPQ/viewform?usp=publish-editor";
+}
 </script>
 
 </body>
 </html>
-
-
-
-
-
